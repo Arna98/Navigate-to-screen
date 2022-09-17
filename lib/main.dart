@@ -12,6 +12,32 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Navigate to new screen',
+      home: Home(),
+    );
+  }
+}
+
+class Home extends StatelessWidget {
+  const Home({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(leading: const Icon(Icons.arrow_back),
+      title: const Text("Home"),
+      centerTitle: true,
+      actions: const [
+        Icon(Icons.notifications),
+        Padding(
+          padding: EdgeInsets.fromLTRB(8, 0, 15, 0),
+          child: Icon(Icons.search),
+        )
+      ],
+      elevation: 1,
+      backgroundColor: Colors.deepPurpleAccent,
+      ),
     );
   }
 }
