@@ -56,11 +56,15 @@ class Home extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.fromLTRB(32, 0, 32, 16),
           child: TextField(
+            obscureText: true,
+            enableSuggestions: false,
+            autocorrect: false,
             decoration: InputDecoration(
-                hintText: "Password",
-                focusedBorder: UnderlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.deepPurpleAccent, width: 2))),
+              hintText: "Password",
+              focusedBorder: UnderlineInputBorder(
+                  borderSide:
+                      BorderSide(color: Colors.deepPurpleAccent, width: 2)),
+            ),
           ),
         ),
         //Buttons
