@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigate_to_screen/screens/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -73,7 +74,9 @@ class Home extends StatelessWidget {
           children: [
             //Elevated button login
             ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: ((context) => const LoginPage())));
+                },
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(100, 30),
                     primary: Colors.deepPurpleAccent),
