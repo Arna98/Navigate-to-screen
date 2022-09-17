@@ -26,19 +26,56 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(leading: const Icon(Icons.arrow_back),
-      title: const Text("Home"),
-      centerTitle: true,
-      actions: const [
-        Icon(Icons.notifications),
-        Padding(
-          padding: EdgeInsets.fromLTRB(8, 0, 15, 0),
-          child: Icon(Icons.search),
-        )
-      ],
-      elevation: 1,
-      backgroundColor: Colors.deepPurpleAccent,
+      appBar: AppBar(
+        leading: const Icon(Icons.arrow_back),
+        title: const Text("Home"),
+        centerTitle: true,
+        actions: const [
+          Icon(Icons.notifications),
+          Padding(
+            padding: EdgeInsets.fromLTRB(8, 0, 15, 0),
+            child: Icon(Icons.search),
+          )
+        ],
+        elevation: 1,
+        backgroundColor: Colors.deepPurpleAccent,
       ),
+      body: Column(children: [
+        //Text field email
+        const Padding(
+          padding: EdgeInsets.fromLTRB(32, 32, 32, 16),
+          child: TextField(
+            decoration: InputDecoration(hintText: "Email"),
+          ),
+        ),
+        //Text field password
+        const Padding(
+          padding: EdgeInsets.fromLTRB(32, 0, 32, 16),
+          child: TextField(
+            decoration: InputDecoration(
+              hintText: "Password",
+            ),
+          ),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            //Elevated button login
+            ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(100, 30),
+                ),
+                child: const Text("Login")),
+            //Elevated button sign up
+            ElevatedButton(
+              onPressed: (() {}),
+              style: ElevatedButton.styleFrom(fixedSize: const Size(100, 30)),
+              child: const Text("Sign Up"),
+            )
+          ],
+        )
+      ]),
     );
   }
 }
