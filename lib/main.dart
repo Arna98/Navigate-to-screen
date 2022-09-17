@@ -57,6 +57,7 @@ class Home extends StatelessWidget {
             ),
           ),
         ),
+        //Buttons
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -65,12 +66,14 @@ class Home extends StatelessWidget {
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   fixedSize: const Size(100, 30),
+                  primary: Colors.deepPurpleAccent
                 ),
                 child: const Text("Login")),
             //Elevated button sign up
             ElevatedButton(
               onPressed: (() {}),
-              style: ElevatedButton.styleFrom(fixedSize: const Size(100, 30)),
+              style: ElevatedButton.styleFrom(fixedSize: const Size(100, 30),
+              primary: Colors.deepPurpleAccent),
               child: const Text("Sign Up"),
             )
           ],
