@@ -45,7 +45,11 @@ class Home extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.fromLTRB(32, 32, 32, 16),
           child: TextField(
-            decoration: InputDecoration(hintText: "Email"),
+            decoration: InputDecoration(
+                hintText: "Email",
+                focusedBorder: UnderlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.deepPurpleAccent, width: 2))),
           ),
         ),
         //Text field password
@@ -53,8 +57,10 @@ class Home extends StatelessWidget {
           padding: EdgeInsets.fromLTRB(32, 0, 32, 16),
           child: TextField(
             decoration: InputDecoration(
-              hintText: "Password",
-            ),
+                hintText: "Password",
+                focusedBorder: UnderlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.deepPurpleAccent, width: 2))),
           ),
         ),
         //Buttons
@@ -65,15 +71,15 @@ class Home extends StatelessWidget {
             ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  fixedSize: const Size(100, 30),
-                  primary: Colors.deepPurpleAccent
-                ),
+                    fixedSize: const Size(100, 30),
+                    primary: Colors.deepPurpleAccent),
                 child: const Text("Login")),
             //Elevated button sign up
             ElevatedButton(
               onPressed: (() {}),
-              style: ElevatedButton.styleFrom(fixedSize: const Size(100, 30),
-              primary: Colors.deepPurpleAccent),
+              style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(100, 30),
+                  primary: Colors.deepPurpleAccent),
               child: const Text("Sign Up"),
             )
           ],
