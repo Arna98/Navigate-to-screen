@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navigate_to_screen/screens/login.dart';
+import 'package:navigate_to_screen/screens/signup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -90,7 +91,10 @@ class Home extends StatelessWidget {
                 child: const Text("Login")),
             //Elevated button sign up
             ElevatedButton(
-              onPressed: (() {}),
+              onPressed: (() {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SignupPage()));
+              }),
               style: ElevatedButton.styleFrom(
                   fixedSize: const Size(100, 30),
                   primary: Colors.deepPurpleAccent),
@@ -108,5 +112,8 @@ void _sendDataToLoginScreen(BuildContext context, TextEditingController email,
   String emailToSend = email.text;
   String passwordToSend = password.text;
   Navigator.push(
-      context, MaterialPageRoute(builder: ((context) => LoginPage(email: emailToSend,password: passwordToSend))));
+      context,
+      MaterialPageRoute(
+          builder: ((context) =>
+              LoginPage(email: emailToSend, password: passwordToSend))));
 }
