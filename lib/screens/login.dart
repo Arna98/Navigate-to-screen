@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class LoginPage extends StatelessWidget {
   String email;
   String password;
-  LoginPage({Key? key, required this.email, required this.password}) : super(key: key);
+  LoginPage({Key? key, required this.email, required this.password})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +16,13 @@ class LoginPage extends StatelessWidget {
       ),
       body: Column(children: [
         Text("Hi, $email \n Your password is $password"),
-        const Text("If you want to go back the home page, press the button below"),
-        ElevatedButton(onPressed: (){
-
-        }, child: const Text("Back To Home"))
+        const Text(
+            "If you want to go back the home page, press the button below"),
+        ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: const Text("Back To Home"))
       ]),
     );
   }
