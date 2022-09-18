@@ -75,7 +75,7 @@ class Home extends StatelessWidget {
             //Elevated button login
             ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: ((context) => const LoginPage())));
+                  _sendDataToLoginScreen(context);
                 },
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(100, 30),
@@ -94,4 +94,9 @@ class Home extends StatelessWidget {
       ]),
     );
   }
+}
+
+void _sendDataToLoginScreen(BuildContext context) {
+  Navigator.push(
+      context, MaterialPageRoute(builder: ((context) => const LoginPage())));
 }
