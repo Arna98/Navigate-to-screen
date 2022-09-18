@@ -27,7 +27,7 @@ class Home extends StatelessWidget {
   // this allows us to access the TextField text
   TextEditingController textFieldEmailControler = TextEditingController();
   TextEditingController textFieldPasswordControler = TextEditingController();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,7 +81,8 @@ class Home extends StatelessWidget {
             //Elevated button login
             ElevatedButton(
                 onPressed: () {
-                  _sendDataToLoginScreen(context);
+                  _sendDataToLoginScreen(context, textFieldEmailControler,
+                      textFieldPasswordControler);
                 },
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(100, 30),
@@ -102,7 +103,10 @@ class Home extends StatelessWidget {
   }
 }
 
-void _sendDataToLoginScreen(BuildContext context) {
+void _sendDataToLoginScreen(BuildContext context, TextEditingController email,
+    TextEditingController password) {
+  String emailToSend = email.text;
+  String passwordToSend = password.text;
   Navigator.push(
       context, MaterialPageRoute(builder: ((context) => const LoginPage())));
 }
