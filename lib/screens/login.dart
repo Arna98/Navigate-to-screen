@@ -10,7 +10,9 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.arrow_back),
+        leading: IconButton(
+            onPressed: (() => _navigatorPop(context)),
+            icon: const Icon(Icons.arrow_back)),
         title: const Text("Login"),
         backgroundColor: Colors.deepPurpleAccent,
       ),
@@ -28,7 +30,7 @@ class LoginPage extends StatelessWidget {
           ),
           ElevatedButton(
               onPressed: () {
-                Navigator.pop(context);
+                _navigatorPop(context);
               },
               style: ElevatedButton.styleFrom(primary: Colors.deepPurpleAccent),
               child: const Text("Back To Home"))
@@ -36,4 +38,8 @@ class LoginPage extends StatelessWidget {
       ),
     );
   }
+}
+
+void _navigatorPop(BuildContext context) {
+  Navigator.pop(context);
 }
