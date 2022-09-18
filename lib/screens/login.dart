@@ -14,16 +14,26 @@ class LoginPage extends StatelessWidget {
         title: const Text("Login"),
         backgroundColor: Colors.deepPurpleAccent,
       ),
-      body: Column(children: [
-        Text("Hi, $email \n Your password is $password"),
-        const Text(
-            "If you want to go back the home page, press the button below"),
-        ElevatedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: const Text("Back To Home"))
-      ]),
+      body: Padding(
+        padding: const EdgeInsets.all(32.0),
+        child: Column(
+          children: [
+          Text("Hi, $email \nYour password is \"$password\"",
+          textAlign: TextAlign.center,
+          style: const TextStyle(fontSize: 20)),
+          const Padding(
+            padding: EdgeInsets.fromLTRB(0, 24, 0, 8),
+            child: Text(
+                "If you want to go back the home page, press the button below :",
+                textAlign: TextAlign.center),
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text("Back To Home"))
+        ]),
+      ),
     );
   }
 }
