@@ -11,7 +11,9 @@ class SignupPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.arrow_back),
+        leading: IconButton(
+            onPressed: () => _navigatorPop(context),
+            icon: const Icon(Icons.arrow_back)),
         title: const Text("Sign Up"),
         backgroundColor: Colors.deepPurpleAccent,
       ),
@@ -69,3 +71,7 @@ class SignupPage extends StatelessWidget {
 }
 
 void _sendDataToHomePage(BuildContext context) {}
+
+void _navigatorPop(BuildContext context) {
+  Navigator.pop(context);
+}
