@@ -108,5 +108,5 @@ void _sendDataToLoginScreen(BuildContext context, TextEditingController email,
   String emailToSend = email.text;
   String passwordToSend = password.text;
   Navigator.push(
-      context, MaterialPageRoute(builder: ((context) => const LoginPage())));
+      context, MaterialPageRoute(builder: ((context) => LoginPage(email: emailToSend,password: passwordToSend))));
 }
