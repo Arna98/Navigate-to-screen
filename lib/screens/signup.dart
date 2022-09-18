@@ -47,6 +47,9 @@ class SignupPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(bottom: 16),
               child: TextField(
+                obscureText: true,
+                enableSuggestions: false,
+                autocorrect: false,
                 controller: textFieldPasswordControler,
                 decoration: const InputDecoration(
                     hintText: "Password",
