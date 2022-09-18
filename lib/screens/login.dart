@@ -16,11 +16,10 @@ class LoginPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(32.0),
-        child: Column(
-          children: [
+        child: Column(children: [
           Text("Hi, $email \nYour password is \"$password\"",
-          textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 20)),
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontSize: 20)),
           const Padding(
             padding: EdgeInsets.fromLTRB(0, 24, 0, 8),
             child: Text(
@@ -31,6 +30,7 @@ class LoginPage extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
+              style: ElevatedButton.styleFrom(primary: Colors.deepPurpleAccent),
               child: const Text("Back To Home"))
         ]),
       ),
