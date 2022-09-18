@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatelessWidget {
-  const SignupPage({Key? key}) : super(key: key);
+  SignupPage({Key? key}) : super(key: key);
+
+  TextEditingController textFieldNameControler = TextEditingController();
+  TextEditingController textFieldEmailControler = TextEditingController();
+  TextEditingController textFieldPasswordControler = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +19,10 @@ class SignupPage extends StatelessWidget {
         padding: const EdgeInsets.all(32),
         child: Column(children: [
           Padding(
-            padding: EdgeInsets.only(bottom: 16),
+            padding: const EdgeInsets.only(bottom: 16),
             child: TextField(
-              decoration: InputDecoration(
+              controller: textFieldNameControler,
+              decoration: const InputDecoration(
                   hintText: "Name",
                   focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
@@ -25,9 +30,10 @@ class SignupPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(bottom: 16),
+            padding: const EdgeInsets.only(bottom: 16),
             child: TextField(
-              decoration: InputDecoration(
+              controller: textFieldEmailControler,
+              decoration: const InputDecoration(
                   hintText: "Email",
                   focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
@@ -35,9 +41,10 @@ class SignupPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(bottom: 16),
+            padding: const EdgeInsets.only(bottom: 16),
             child: TextField(
-              decoration: InputDecoration(
+              controller: textFieldPasswordControler,
+              decoration: const InputDecoration(
                   hintText: "Password",
                   focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
