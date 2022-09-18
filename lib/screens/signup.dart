@@ -13,7 +13,7 @@ class SignupPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(32),
-        child: Column(children: const [
+        child: Column(children: [
           Padding(
             padding: EdgeInsets.only(bottom: 16),
             child: TextField(
@@ -44,8 +44,18 @@ class SignupPage extends StatelessWidget {
                           color: Colors.deepPurpleAccent, width: 2))),
             ),
           ),
+          ElevatedButton(
+              onPressed: () {
+                _sendDataToHomePage(context);
+              },
+              style: ElevatedButton.styleFrom(
+                  primary: Colors.deepPurpleAccent,
+                  fixedSize: const Size(200, 30)),
+              child: const Text("Sign Up"))
         ]),
       ),
     );
   }
 }
+
+void _sendDataToHomePage(BuildContext context) {}
