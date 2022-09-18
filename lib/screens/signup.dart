@@ -57,7 +57,11 @@ class SignupPage extends StatelessWidget {
             ),
             ElevatedButton(
                 onPressed: () {
-                  _sendDataToHomePage(context);
+                  _sendDataToHomePage(
+                      context,
+                      textFieldNameControler.text,
+                      textFieldEmailControler.text,
+                      textFieldPasswordControler.text);
                 },
                 style: ElevatedButton.styleFrom(
                     primary: Colors.deepPurpleAccent,
@@ -70,7 +74,11 @@ class SignupPage extends StatelessWidget {
   }
 }
 
-void _sendDataToHomePage(BuildContext context) {}
+void _sendDataToHomePage(
+    BuildContext context, String name, String email, String password) {
+  List<String> info = [name, email, password];
+  Navigator.pop(context, info);
+}
 
 void _navigatorPop(BuildContext context) {
   Navigator.pop(context);
