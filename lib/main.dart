@@ -20,10 +20,14 @@ class MyApp extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
-  const Home({
+  Home({
     Key? key,
   }) : super(key: key);
 
+  // this allows us to access the TextField text
+  TextEditingController textFieldEmailControler = TextEditingController();
+  TextEditingController textFieldPasswordControler = TextEditingController();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,10 +47,11 @@ class Home extends StatelessWidget {
       ),
       body: Column(children: [
         //Text field email
-        const Padding(
-          padding: EdgeInsets.fromLTRB(32, 32, 32, 16),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(32, 32, 32, 16),
           child: TextField(
-            decoration: InputDecoration(
+            controller: textFieldEmailControler,
+            decoration: const InputDecoration(
                 hintText: "Email",
                 focusedBorder: UnderlineInputBorder(
                     borderSide:
@@ -54,13 +59,14 @@ class Home extends StatelessWidget {
           ),
         ),
         //Text field password
-        const Padding(
-          padding: EdgeInsets.fromLTRB(32, 0, 32, 16),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(32, 0, 32, 16),
           child: TextField(
             obscureText: true,
             enableSuggestions: false,
             autocorrect: false,
-            decoration: InputDecoration(
+            controller: textFieldPasswordControler,
+            decoration: const InputDecoration(
               hintText: "Password",
               focusedBorder: UnderlineInputBorder(
                   borderSide:
