@@ -15,51 +15,54 @@ class SignupPage extends StatelessWidget {
         title: const Text("Sign Up"),
         backgroundColor: Colors.deepPurpleAccent,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(32),
-        child: Column(children: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 16),
-            child: TextField(
-              controller: textFieldNameControler,
-              decoration: const InputDecoration(
-                  hintText: "Name",
-                  focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                          color: Colors.deepPurpleAccent, width: 2))),
+      body: SingleChildScrollView(
+        reverse: true,
+        child: Padding(
+          padding: const EdgeInsets.all(32),
+          child: Column(children: [
+            Padding(
+              padding: const EdgeInsets.only(bottom: 16),
+              child: TextField(
+                controller: textFieldNameControler,
+                decoration: const InputDecoration(
+                    hintText: "Name",
+                    focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Colors.deepPurpleAccent, width: 2))),
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 16),
-            child: TextField(
-              controller: textFieldEmailControler,
-              decoration: const InputDecoration(
-                  hintText: "Email",
-                  focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                          color: Colors.deepPurpleAccent, width: 2))),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 16),
+              child: TextField(
+                controller: textFieldEmailControler,
+                decoration: const InputDecoration(
+                    hintText: "Email",
+                    focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Colors.deepPurpleAccent, width: 2))),
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 16),
-            child: TextField(
-              controller: textFieldPasswordControler,
-              decoration: const InputDecoration(
-                  hintText: "Password",
-                  focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                          color: Colors.deepPurpleAccent, width: 2))),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 16),
+              child: TextField(
+                controller: textFieldPasswordControler,
+                decoration: const InputDecoration(
+                    hintText: "Password",
+                    focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Colors.deepPurpleAccent, width: 2))),
+              ),
             ),
-          ),
-          ElevatedButton(
-              onPressed: () {
-                _sendDataToHomePage(context);
-              },
-              style: ElevatedButton.styleFrom(
-                  primary: Colors.deepPurpleAccent,
-                  fixedSize: const Size(200, 30)),
-              child: const Text("Sign Up"))
-        ]),
+            ElevatedButton(
+                onPressed: () {
+                  _sendDataToHomePage(context);
+                },
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.deepPurpleAccent,
+                    fixedSize: const Size(200, 30)),
+                child: const Text("Sign Up"))
+          ]),
+        ),
       ),
     );
   }
