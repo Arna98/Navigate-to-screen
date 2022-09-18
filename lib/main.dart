@@ -91,9 +91,11 @@ class Home extends StatelessWidget {
                 child: const Text("Login")),
             //Elevated button sign up
             ElevatedButton(
-              onPressed: (() {
-                Navigator.push(context,
+              onPressed: (() async {
+                final data = await Navigator.push(context,
                     MaterialPageRoute(builder: (context) => SignupPage()));
+                textFieldEmailControler.text = data[1];
+                textFieldPasswordControler.text = data[2];
               }),
               style: ElevatedButton.styleFrom(
                   fixedSize: const Size(100, 30),
